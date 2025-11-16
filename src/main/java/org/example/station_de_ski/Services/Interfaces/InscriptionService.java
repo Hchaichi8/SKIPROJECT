@@ -10,4 +10,6 @@ public interface InscriptionService {
     Inscription modifierInscription(Inscription inscription);
     void supprimerInscription(long id);
     List<Inscription> getInscription();
+
+
 }

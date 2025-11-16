@@ -10,4 +10,7 @@ public interface SkieurService {
     Skieur modifierSkieur(Skieur skieur);
     void supprimerSkieur(long id);
     List<Skieur> getSkieurs();
+
+
+
 }

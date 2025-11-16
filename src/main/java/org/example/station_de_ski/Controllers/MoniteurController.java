@@ -11,7 +11,11 @@ import java.util.List;
 @RequestMapping("/Moniteur")
 public class MoniteurController {
     @Autowired
-    MoniteurService moniteurService;
+    private final MoniteurService moniteurService;
+
+    public MoniteurController(MoniteurService moniteurService) {
+        this.moniteurService = moniteurService;
+    }
 
     @PostMapping("/addMoniteur")
     public Moniteur addMoniteur(@RequestBody Moniteur m) {return moniteurService.ajouterMoniteur(m);}

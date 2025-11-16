@@ -36,4 +36,6 @@ public class SkieurImpl implements SkieurService {
     public List<Skieur> getSkieurs() {
         return SkieurRepo.findAll();
     }
+
+
 }

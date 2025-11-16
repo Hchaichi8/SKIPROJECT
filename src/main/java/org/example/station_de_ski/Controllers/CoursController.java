@@ -10,7 +10,11 @@ import java.util.List;
 @RequestMapping("/Cours")
 public class CoursController {
     @Autowired
-    CoursService coursService;
+    private final CoursService coursService;
+
+    public CoursController(CoursService coursService) {
+        this.coursService = coursService;
+    }
 
     @PostMapping("/addCours")
     public Cours addCours(@RequestBody Cours c) {return coursService.ajouterCours(c);}

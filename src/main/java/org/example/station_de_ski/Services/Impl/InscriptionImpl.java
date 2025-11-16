@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-
 public class InscriptionImpl implements InscriptionService {
     @Autowired
     InscriptionRepository InscriptionRepo;
@@ -37,4 +36,5 @@ public class InscriptionImpl implements InscriptionService {
     public List<Inscription> getInscription() {
         return InscriptionRepo.findAll();
     }
+
 }

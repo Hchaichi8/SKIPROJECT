@@ -1,5 +1,6 @@
 package org.example.station_de_ski.Controllers;
 
+import lombok.AllArgsConstructor;
 import org.example.station_de_ski.Entities.Piste;
 import org.example.station_de_ski.Services.Interfaces.PisteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,12 @@ import java.util.List;
 @RequestMapping("/Piste")
 public class PisteController {
     @Autowired
-    PisteService pisteService;
+    private final PisteService pisteService;
+
+    public PisteController(org.example.station_de_ski.Services.Interfaces.PisteService pisteService) {
+        this.pisteService = pisteService;
+    }
+
 
     @PostMapping("/addPiste")
     public Piste addPiste(@RequestBody Piste piste) {

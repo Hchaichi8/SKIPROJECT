@@ -11,8 +11,11 @@ import java.util.List;
 @RequestMapping("/Skieur")
 public class SkieurController {
     @Autowired
-    SkieurService skieurService;
+    private final SkieurService skieurService;
 
+    public SkieurController(SkieurService skieurService) {
+        this.skieurService = skieurService;
+    }
 
     @PostMapping("/addSkieur")
     public Skieur addSkieur(@RequestBody Skieur skieur) {return skieurService.ajouterSkieur(skieur);}

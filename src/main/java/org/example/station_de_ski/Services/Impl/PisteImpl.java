@@ -13,6 +13,8 @@ public class PisteImpl implements PisteService {
     @Autowired
     PisteRepository PisteRepo;
 
+
+
     @Override
     public Piste ajouterPiste(Piste piste) {
         return PisteRepo.save(piste);

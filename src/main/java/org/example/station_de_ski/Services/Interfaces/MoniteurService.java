@@ -10,4 +10,6 @@ public interface MoniteurService {
     Moniteur modifierMoniteur(Moniteur moniteur);
     void supprimerMoniteur(long id);
     List<Moniteur> getMoniteur();
+
+    Moniteur addInstructorAndAssignToCourse(Moniteur moniteur, Long numCourse);
 }

@@ -11,7 +11,11 @@ import java.util.List;
 @RequestMapping("/Inscription")
 public class InscriptionController {
     @Autowired
-    InscriptionService inscriptionService;
+    private final InscriptionService inscriptionService;
+
+    public InscriptionController(InscriptionService inscriptionService) {
+        this.inscriptionService = inscriptionService;
+    }
 
     @PostMapping("/addInscription")
     public Inscription addInscription(@RequestBody Inscription i) {return inscriptionService.ajouterInscription(i);}

@@ -6,8 +6,6 @@ import lombok.*;
 import java.util.List;
 
 @Entity
-@Getter
-@Setter
 @EqualsAndHashCode
 @ToString
 @Builder
@@ -26,5 +24,24 @@ public class Piste {
 
     @ManyToMany(mappedBy = "pistes")
     private List<Skieur> skieurs;
+
+
+    public Long getNumPiste() { return numPiste; }
+    public void setNumPiste(Long numPiste) { this.numPiste = numPiste; }
+
+    public String getNomPiste() { return nomPiste; }
+    public void setNomPiste(String nomPiste) { this.nomPiste = nomPiste; }
+
+    public Couleur getCouleur() { return couleur; }
+    public void setCouleur(Couleur couleur) { this.couleur = couleur; }
+
+    public int getLongueur() { return longueur; }
+    public void setLongueur(int longueur) { this.longueur = longueur; }
+
+    public int getPente() { return pente; }
+    public void setPente(int pente) { this.pente = pente; }
+
+    public List<Skieur> getSkieurs() { return skieurs; }
+    public void setSkieurs(List<Skieur> skieurs) { this.skieurs = skieurs; }
 
 }
