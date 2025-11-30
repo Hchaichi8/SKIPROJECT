@@ -1,6 +1,7 @@
 package org.example.station_de_ski.Services.Interfaces;
 
 import org.example.station_de_ski.Entities.*;
+import org.springframework.scheduling.annotation.Scheduled;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -20,5 +21,6 @@ public interface ISkiStationService {
     List<Integer> numWeeksCourseOfInstructorBySupport(Long numInstructor , Supports support);
 
 
-
+    @Scheduled(cron = "0 0 8 * * *")
+    void retrieveAbonnement();
 }

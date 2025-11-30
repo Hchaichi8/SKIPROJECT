@@ -18,27 +18,22 @@ public class PisteController {
         this.pisteService = pisteService;
     }
 
-
     @PostMapping("/addPiste")
     public Piste addPiste(@RequestBody Piste piste) {
         return pisteService.ajouterPiste(piste);
     }
-
-    @PutMapping("/modifierPiste")  // CHANGÉ: POST → PUT
+    @PutMapping("/modifierPiste")
     public Piste modifierPiste(@RequestBody Piste piste) {
         return pisteService.modifierPiste(piste);
     }
-
     @DeleteMapping("/supprimerPiste/{id}")
     public void supprimerPiste(@PathVariable long id) {
         pisteService.supprimerPiste(id);
     }
-
     @GetMapping("/getPiste/{id}")
     public Piste getPiste(@PathVariable long id) {
         return pisteService.getPisteById(id);
     }
-
     @GetMapping("/getAllPistes")
     public List<Piste> getAllPistes() {
         return pisteService.getPiste();

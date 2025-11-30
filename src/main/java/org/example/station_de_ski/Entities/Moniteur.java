@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @EqualsAndHashCode
@@ -21,7 +22,7 @@ public class Moniteur {
     private LocalDate dateRecru;
 
     @OneToMany(mappedBy = "moniteur")
-    private List<Cours> cours;
+    private Set<Cours> cours;
 
     public long getNumMoniteur() {
         return numMoniteur;
@@ -55,11 +56,11 @@ public class Moniteur {
         this.dateRecru = dateRecru;
     }
 
-    public List<Cours> getCours() {
+    public Set<Cours> getCours() {
         return cours;
     }
 
-    public void setCours(List<Cours> cours) {
+    public void setCours(Set<Cours> cours) {
         this.cours = cours;
     }
 }
